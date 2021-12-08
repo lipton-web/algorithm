@@ -18,13 +18,12 @@ def find_not_repeating_character(string):
         if alphabet_occurrence == 1:
             not_repeating_character_array.append(chr(index + ord("a")))
 
-    # for char in string:
-    #     if char in not_repeating_character_array:
-    #         return char
-
     print(not_repeating_character_array)
 
-    return "_"
+    for char in string:
+        if char in not_repeating_character_array:
+            return char
+
 
 
 result = find_not_repeating_character(input)
