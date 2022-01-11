@@ -15,8 +15,20 @@ def merge(array1, array2):
         else:
             array_c.append(array2[array2_index])
             array2_index += 1
+    
+    # 남은 값 추가하기(array2 남은값)
+    if array1_index == len(array1):
+        while array2_index < len(array2):
+            array_c.append(array2[array2_index])
+            array2_index += 1
 
-    return
+    # 남은 값 추가하기(array1 남은값)
+    if array2_index == len(array2):
+        while array1_index < len(array1):
+            array_c.append(array1[array1_index])
+            array2_index += 1
+            
+    return array_c
 
 
 print(merge(array_a, array_b))  # [1, 2, 3, 4, 5, 6, 7, 8] 가 되어야 합니다!
